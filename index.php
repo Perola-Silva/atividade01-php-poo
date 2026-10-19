@@ -1,7 +1,11 @@
 <?php 
 require_once "src/Planta.php";
 
+$planta1 = new Planta('Suculenta', 'Echeveria elegans', 15);
 
+echo '<pre>';
+var_dump($planta1);
+echo '</pre>';
 ?>
 
 <!-- 
@@ -30,7 +34,7 @@ Utilize os dados informados no enunciado. -->
         <section class="cartao">
 
             <h2>
-                <!-- Exiba o nome popular da planta. -->
+                
             </h2>
 
             <div class="informacao">
