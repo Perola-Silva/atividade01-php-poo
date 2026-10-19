@@ -2,10 +2,14 @@
 require_once "src/Planta.php";
 
 $planta1 = new Planta('Suculenta', 'Echeveria elegans', 15);
+$planta2 = new Planta('Samambaia-Americana', 'Nephrolepis exaltata', 45);
+$planta3 = new Planta('Zamioculca', 'Zamioculcas zamiifolia', 10);
 
-echo '<pre>';
-var_dump($planta1);
-echo '</pre>';
+$plantas = [$planta1, $planta2, $planta3];
+
+// echo '<pre>';
+// var_dump($plantas);
+// echo '</pre>';
 ?>
 
 <!-- 
@@ -31,17 +35,18 @@ Utilize os dados informados no enunciado. -->
             Cuidados simples para cultivar em casa.
         </p>
 
+        <?php foreach($plantas as $planta): ?>
         <section class="cartao">
 
             <h2>
-                
+                <?= $planta->getNome() ?>
             </h2>
 
             <div class="informacao">
                 <span class="rotulo">Espécie científica</span>
 
                 <span class="valor">
-                    <!-- Exiba a espécie. -->
+                    <?= $planta->getEspecie() ?>
                 </span>
             </div>
 
@@ -49,7 +54,7 @@ Utilize os dados informados no enunciado. -->
                 <span class="rotulo">Água recomendada por dia</span>
 
                 <span class="valor">
-                    <!-- Exiba a quantidade diária em ml. -->
+                    <?= $planta->getAguaPorDia() ?>
                 </span>
             </div>
 
@@ -57,11 +62,12 @@ Utilize os dados informados no enunciado. -->
                 <strong>Recomendação para sete dias</strong>
 
                 <p>
-                    <!-- Exiba a quantidade calculada para sete dia -->
+                    <?= $planta->calcularAguaSemanal() ?>
                 </p>
             </div>
 
         </section>
+        <?php endforeach; ?>
 
         <footer>
             Projeto desenvolvido com PHP e Programação Orientada a Objetos.

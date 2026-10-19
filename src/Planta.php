@@ -14,8 +14,8 @@ class Planta {
 
     // Metodos
 
-    public function calcularAguaSemanal(float $aguaPorDia): float{
-        return $aguaSemanal = $aguaPorDia * 7;
+    public function calcularAguaSemanal(): string{
+        return number_format($aguaSemanal = $this->aguaPorDia * 7, 0, '.' , ',') . 'ml';
     }
 
 
@@ -30,7 +30,7 @@ class Planta {
     }
     
     public function getAguaPorDia(): string{
-        return $this->aguaPorDia;
+        return number_format($this->aguaPorDia, 0, '.' , ',') . 'ml' ;
     }
 
 
